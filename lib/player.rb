@@ -62,5 +62,20 @@ class HumanPlayer < Player
     end
     
     def search_health_pack
-        
+      health_pack = rand(1..6)
+  
+      if health_pack == 1
+        puts "Tu n'as rien trouvé... "
+      elsif health_pack.between?(2, 5)
+        @life_points += 50
+        puts "Bravo, tu as trouvé un pack de +50 points de vie !"
+      elsif
+        @life_points += 80
+        puts "Waow, tu as trouvé un pack de +80 points de vie !"
+      end
+  
+      if @life_points > 100
+        @life_points = 100
+      end
     end
+  end
